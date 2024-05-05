@@ -1,0 +1,30 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MongoDB Admin Panel</title>
+</head>
+<body>
+    <h1>MongoDB Instances</h1>
+    <ul>
+        {% for instance in mongodb_instances %}
+            <li>{{ instance.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>MongoDB Databases</h1>
+    <ul>
+        {% for database in mongodb_databases %}
+            <li>{{ database.name }}</li>
+        {% endfor %}
+    </ul>
+
+    <h1>MongoDB Users</h1>
+    <ul>
+        {% for user in mongodb_users %}
+            <li>{{ user.username }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

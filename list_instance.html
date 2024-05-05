@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>list_instance</title>
+    <!-- list_instances.html -->
+<h1>List of MongoDB Instances</h1>
+<ul>
+    {% for instance in instances %}
+    <li>
+        {{ instance.name }} ({{ instance.databases.count }} databases, {{ instance.total_users }} users)
+        <ul>
+            {% for database in instance.databases.all %}
+            <li>{{ database.name }} ({{ database.users.count }} users)</li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+
+
+</head>
+<body>
+
+</body>
+</html>
